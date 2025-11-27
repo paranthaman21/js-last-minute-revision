@@ -107,3 +107,16 @@
 | **Status Codes** | 200, 404, 500. | (Conceptual) |
 | **fetch()** | Make a network request. | `fetch(url, options);` |
 | **Response Object** | Access response details. | `response.status;` |
+
+## Modern JavaScript Syntax Cheat Sheet
+
+
+| Concept | Syntax/Key Structure | Description/Usage | Source Example |
+| :--- | :--- | :--- | :--- |
+| **Spread Operator (`...`)** | `...iterable` or `{...object}` | Unpacks an iterable into individual elements; used for copying, concatenation, or passing function arguments. | **Array:** `let arr3 = [...arr1, ...arr2];`<br>**Object:** `let personDetails = { ...person };`<br>**Function Args:** `add(...numbers);` |
+| **Rest Parameter (`...`)** | `...rest` (must be last param) | Packs remaining values into an array in functions or destructuring. | **Function:** `function numbers(a, b, ...rest)`<br>**Array:** `let [a, b, ...rest] = arr;`<br>**Object:** `let { firstName, ...rest } = obj;` |
+| **Arrow Functions** | `(param) => {}` | Shorter alternative to function expressions; implicit return when not using `{}`. | **Normal:** `let sum = (a, b) => { return a + b };`<br>**Implicit:** `let sum = (a, b) => a + b;`<br>**Return Object:** `name => ({ firstName: "Rahul" })` |
+| **Default Parameters** | `function fn(param = default)` | Sets default parameter values when arguments are missing. | `function numbers(a = 2, b = 5)`<br>Call: `numbers(3);` (b becomes 5) |
+| **Template Literals** | `` `Hello ${value}` `` | Backtick strings with embedding + multiline support. | `` console.log(`Hello ${firstName}!`) `` |
+| **Ternary Operator** | `condition ? val1 : val2` | Short conditional alternative to `if...else`. | `let msg = speed >= 100 ? "Too Fast" : "OK";` |
+| **Switch Statement** | `switch(value){case x:...}` | Multi-branch conditional; `break` prevents fall-through. | `case 1: console.log("Monday"); break;` |
