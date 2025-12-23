@@ -120,3 +120,22 @@
 | **Template Literals** | `` `Hello ${value}` `` | Backtick strings with embedding + multiline support. | `` console.log(`Hello ${firstName}!`) `` |
 | **Ternary Operator** | `condition ? val1 : val2` | Short conditional alternative to `if...else`. | `let msg = speed >= 100 ? "Too Fast" : "OK";` |
 | **Switch Statement** | `switch(value){case x:...}` | Multi-branch conditional; `break` prevents fall-through. | `case 1: console.log("Monday"); break;` |
+
+## Object Creation Patterns
+
+| Feature | Example Code | Key Takeaway |
+| :--- | :--- | :--- |
+| **Factory Function** | `function createCar(color, brand) { return { color, brand, start() { console.log("Car Started"); } }; }` | A function that returns an object directly. Uses shorthand property notation when variable and key names match. |
+| **Constructor Function** | `function Car(color, brand) { this.color = color; this.brand = brand; } const carOne = new Car("blue", "Audi");` | Requires the `new` keyword. Properties are assigned using `this`. |
+| **Function Properties** | `function Car(color, brand) {}`<br>`Car.name; // "Car"`<br>`Car.length; // 2` | Functions are objects. `name` returns function name, `length` returns parameter count. |
+
+---
+
+## Built-in Objects: Date
+
+| Feature | Example Code | Key Takeaway |
+| :--- | :--- | :--- |
+| **Constructor Property** | `const dateObj = new Date();`<br>`dateObj.constructor === Date; // true` | Every object has a `constructor` property referencing its creator. |
+| **Date Creation** | `new Date();`<br>`new Date(milliseconds);`<br>`new Date("YYYY-MM-DD");`<br>`new Date(year, month, day);` | Shows different ways to instantiate a Date object. |
+| **Auto Correction** | `new Date(2006, 13, 32);` | JavaScript auto-corrects invalid month/day values. |
+| **Instance Methods** | `let d1 = new Date(2020, 5, 15);`<br>`d1.getFullYear(); // 2020`<br>`d1.setFullYear(2021);` | `get` and `set` methods read and modify date values. |
