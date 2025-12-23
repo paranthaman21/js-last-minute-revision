@@ -139,3 +139,46 @@
 | **Date Creation** | `new Date();`<br>`new Date(milliseconds);`<br>`new Date("YYYY-MM-DD");`<br>`new Date(year, month, day);` | Shows different ways to instantiate a Date object. |
 | **Auto Correction** | `new Date(2006, 13, 32);` | JavaScript auto-corrects invalid month/day values. |
 | **Instance Methods** | `let d1 = new Date(2020, 5, 15);`<br>`d1.getFullYear(); // 2020`<br>`d1.setFullYear(2021);` | `get` and `set` methods read and modify date values. |
+
+## More Modern JavaScript Concepts | Part 3 | Cheat Sheet
+
+
+### 1. `this` Keyword
+
+
+| Scenario | Description | Example |
+| :--- | :--- | :--- |
+| **Object Method** | `this` refers to the object calling the method. | `let car = { color: 'blue', start() { console.log(this); } }; car.start();` |
+| **Regular Function** | `this` refers to the global object (`window` in browsers). | `function start() { console.log(this); } start();` |
+| **Arrow Function (Object Method)** | Arrow functions do not have their own `this`; they inherit from surrounding scope. | `let car = { start: () => console.log(this) }; car.start(); // window` |
+| **Arrow Function (Callback)** | Inherits `this` from parent function. | `setTimeout(() => console.log(this), 1000);` |
+| **Constructor Function** | `this` refers to the instance created using `new`. | `function Car(){ console.log(this); } new Car();` |
+| **Arrow in Constructor** | Arrow inherits `this` from constructor context. | `this.start = () => console.log(this);` |
+
+
+---
+
+
+### 2. Immutable vs Mutable Values
+
+
+| Type | Description | Example |
+| :--- | :--- | :--- |
+| **Immutable** | Primitive values cannot be changed. | `let x = 5; let y = x; y = 10; // x is still 5` |
+| **Mutable** | Objects can be modified via references. | `let x = { v: 5 }; let y = x; y.v = 10; // x.v is 10` |
+
+
+---
+
+
+### 3. Declaring Variables
+
+
+| Keyword | Rules | Example |
+| :--- | :--- | :--- |
+| **let** | Can be declared without initialization and reassigned. | `let x; x = 10; x = 15;` |
+| **const** | Must be initialized and cannot be reassigned. | `const x = 7; // valid` |
+| **const (Object Mutation)** | Object properties can change, reference cannot. | `const car = { color: 'blue' }; car.color = 'red';` |
+| **Invalid const Reassignment** | Reassigning causes error. | `car = {}; // TypeError` |
+
+
